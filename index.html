@@ -10,14 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
+        body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #fff; 
-            color: #171a20; 
+            background: #fff;
+            color: #171a20;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
-
         /* Navigation - Tesla Style */
         nav {
             position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.92);
@@ -27,7 +26,7 @@
         nav.transparent { background: transparent; border-bottom: none; }
         nav.transparent .navbar-nav .nav-link { color: #fff !important; }
         nav.transparent .logo { color: #fff !important; }
-        .logo { 
+        .logo {
             font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em;
             color: #171a20; text-decoration: none;
         }
@@ -39,7 +38,7 @@
         .navbar-nav .nav-link:hover { background: rgba(0,0,0,0.05); }
         nav.transparent .navbar-nav .nav-link:hover { background: rgba(255,255,255,0.1); }
         .nav-cta {
-            background: #171a20 !important; color: #fff !important; 
+            background: #171a20 !important; color: #fff !important;
             padding: 0.5rem 1.5rem !important; border-radius: 4px; font-weight: 500;
         }
         nav.transparent .nav-cta { background: rgba(255,255,255,0.15) !important; }
@@ -48,86 +47,75 @@
         }
         .navbar-toggler:focus { box-shadow: none; }
         .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000000' d='M19.14 12.936c.036-.306.036-.612 0-.918l2.037-1.58a.5.5 0 0 0 .12-.617l-1.928-3.338a.5.5 0 0 0-.588-.22l-2.396.96a7.007 7.007 0 0 0-1.583-.918l-.36-2.54A.5.5 0 0 0 13.7 2h-3.4a.5.5 0 0 0-.495.424l-.36 2.54a7.007 7.007 0 0 0-1.583.918l-2.396-.96a.5.5 0 0 0-.588.22L2.3 8.82a.5.5 0 0 0 .12.617l2.037 1.58c-.036.306-.036.612 0 .918L2.42 14.47a.5.5 0 0 0-.12.617l1.928 3.338a.5.5 0 0 0 .588.22l2.396-.96c.49.38 1.02.693 1.583.918l.36 2.54A.5.5 0 0 0 10.3 22h3.4a.5.5 0 0 0 .495-.424l.36-2.54c.563-.225 1.093-.538 1.583-.918l2.396.96a.5.5 0 0 0 .588-.22l1.928-3.338a.5.5 0 0 0-.12-.617l-2.037-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000000' d='M19.14 12.936c.036-.306.036-.612 0-.918l2.037-1.58a.5.5 0 0 0 .12-.617l-1.928-3.338a.5.5 0 0 0-.588-.22l-2.396.96a7.007 7.007 0 0 0-1.583-.918l-.36-2.54A.5.5 0 0 0 13.7 2h-3.4a.5.5 0 0 0-.495.424l-.36 2.54a7.007 7.007 0 0 0-1.583.918l-2.396-.96a.5.5 0 0 0-.588.22L2.3 8.82a.5.5 0 0 0 .12.617l2.037 1.58c-.036.306-.036.612 0 .918L2.42 14.47a.5.5 0 0 0-.12.617l1.928 3.338a.5.5 0 0 0 .588.22l2.396-.96c.49.38 1.02.693 1.583.918l.36 2.54A.5.5 0 0 0 10.3 22h3.4a.5.5 0 0 0 .495-.424l-.36-2.54c.563-.225 1.093-.538 1.583-.918l2.396.96a.5.5 0 0 0 .588-.22l1.928-3.338a.5.5 0 0 0-.12-.617l-2.037-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z'/%3E%3C/svg%3E");
         }
         nav.transparent .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M19.14 12.936c.036-.306.036-.612 0-.918l2.037-1.58a.5.5 0 0 0 .12-.617l-1.928-3.338a.5.5 0 0 0-.588-.22l-2.396.96a7.007 7.007 0 0 0-1.583-.918l-.36-2.54A.5.5 0 0 0 13.7 2h-3.4a.5.5 0 0 0-.495.424l-.36 2.54a7.007 7.007 0 0 0-1.583.918l-2.396-.96a.5.5 0 0 0-.588.22L2.3 8.82a.5.5 0 0 0 .12.617l2.037 1.58c-.036.306-.036.612 0 .918L2.42 14.47a.5.5 0 0 0-.12.617l1.928 3.338a.5.5 0 0 0 .588.22l2.396-.96c.49.38 1.02.693 1.583.918l.36 2.54A.5.5 0 0 0 10.3 22h3.4a.5.5 0 0 0 .495-.424l.36-2.54c.563-.225 1.093-.538 1.583-.918l2.396.96a.5.5 0 0 0 .588-.22l1.928-3.338a.5.5 0 0 0-.12-.617l-2.037-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M19.14 12.936c.036-.306.036-.612 0-.918l2.037-1.58a.5.5 0 0 0 .12-.617l-1.928-3.338a.5.5 0 0 0-.588-.22l-2.396.96a7.007 7.007 0 0 0-1.583-.918l-.36-2.54A.5.5 0 0 0 13.7 2h-3.4a.5.5 0 0 0-.495.424l-.36 2.54a7.007 7.007 0 0 0-1.583.918l-2.396-.96a.5.5 0 0 0-.588.22L2.3 8.82a.5.5 0 0 0 .12.617l2.037 1.58c-.036.306-.036.612 0 .918L2.42 14.47a.5.5 0 0 0-.12.617l1.928 3.338a.5.5 0 0 0 .588.22l2.396-.96c.49.38 1.02.693 1.583.918l.36 2.54A.5.5 0 0 0 10.3 22h3.4a.5.5 0 0 0 .495-.424l-.36-2.54c.563-.225 1.093-.538 1.583-.918l2.396.96a.5.5 0 0 0 .588-.22l1.928-3.338a.5.5 0 0 0-.12-.617l-2.037-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z'/%3E%3C/svg%3E");
         }
-
         /* OPTIMIZED HERO SLIDESHOW - MOBILE 90VH */
         .hero-section {
-            height: 100vh; 
-            position: relative; 
+            height: 100vh;
+            position: relative;
             display: flex;
-            flex-direction: column; 
-            align-items: center; 
+            flex-direction: column;
+            align-items: center;
             justify-content: space-between;
-            color: #fff; 
-            text-align: center; 
-            padding: 2rem 1rem; 
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
             overflow: hidden;
         }
-
         .hero-slideshow {
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
             height: 100%;
             z-index: -1;
         }
-
         .hero-slide {
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
             height: 100%;
             opacity: 0;
             transition: opacity 1s ease-in-out;
             loading: lazy;
         }
-
-        .hero-slide.active { 
-            opacity: 1; 
+        .hero-slide.active {
+            opacity: 1;
         }
-
         /* MOBILE ONLY: 90VH + COVER + 2 IMAGES */
         @media (max-width: 767.98px) {
-            .hero-section { 
-                height: 100vh !important; 
-                padding-top: 5rem; 
+            .hero-section {
+                height: 100vh !important;
+                padding-top: 5rem;
             }
-            
             .hero-slide:nth-child(1) {
                 background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)),
-                url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761193358/LASGIDI1_nh0rs2.jpg') center/cover;
+                    url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761193358/LASGIDI1_nh0rs2.jpg') center/cover;
             }
-            
             .hero-slide:nth-child(2) {
                 background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)),
-                url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761193358/LASGIDI2_tzndnv.jpg') center/cover;
+                    url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761193358/LASGIDI2_tzndnv.jpg') center/cover;
             }
         }
-
         /* DESKTOP/TABLET: 100VH + Unsplash Images */
         @media (min-width: 768px) {
             .hero-slide {
                 background-size: cover !important;
                 background-position: center !important;
             }
-            
             .hero-slide:nth-child(1) {
                 background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)),
-                url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85&fm=webp') center/cover;
+                    url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85&fm=webp') center/cover;
             }
-
             .hero-slide:nth-child(2) {
                 background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)),
-                url('https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85&fm=webp') center/cover;
+                    url('https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85&fm=webp') center/cover;
             }
         }
-
         .slideshow-dots {
             position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
             display: flex; gap: 0.5rem; z-index: 10;
@@ -138,8 +126,7 @@
             transition: all 0.3s ease;
         }
         .dot.active { background: #fff; transform: scale(1.2); }
-
-        .hero-content { 
+        .hero-content {
             margin-top: 6rem; animation: fadeInUp 1s ease; z-index: 2;
         }
         .hero-content h1 {
@@ -164,29 +151,25 @@
         .btn-primary-custom:hover { background: rgba(23,26,32,1); color: #fff; }
         .btn-secondary-custom { background: rgba(255,255,255,0.75); color: #171a20; }
         .btn-secondary-custom:hover { background: rgba(255,255,255,0.95); color: #171a20; }
-
         /* ✅ NEW 3-CAR MINIMAL SLIDER - REPLACES CAROUSEL + LEXUS */
         .model-slider-section {
-            min-height: 100vh; 
-            padding: 6rem 1rem; 
+            min-height: 100vh;
+            padding: 6rem 1rem;
             background: #f8f9fa;
             overflow: hidden;
         }
-
         .slider-container {
-            max-width: 1200px; 
-            margin: 0 auto; 
+            max-width: 1200px;
+            margin: 0 auto;
             position: relative;
         }
-
         .slider-title {
-            text-align: center; 
-            font-size: clamp(1.5rem, 3vw, 2rem); 
-            font-weight: 600; 
-            margin-bottom: 3rem; 
+            text-align: center;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 600;
+            margin-bottom: 3rem;
             letter-spacing: -0.02em;
         }
-
         .horizontal-slider {
             display: flex;
             transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -194,9 +177,7 @@
             gap: 2rem;
             cursor: grab;
         }
-
         .horizontal-slider:active { cursor: grabbing; }
-
         .slider-item {
             flex: 0 0 33.333%;
             height: 70vh;
@@ -211,106 +192,93 @@
             align-items: center;
             justify-content: center;
         }
-
         /* MOBILE: 1 CAR VISIBLE */
         @media (max-width: 767.98px) {
-            .horizontal-slider { 
-                width: 300%; 
-                gap: 1rem; 
+            .horizontal-slider {
+                width: 300%;
+                gap: 1rem;
             }
-            .slider-item { 
-                height: 55vh !important; 
-                flex: 0 0 33.333%; 
+            .slider-item {
+                height: 55vh !important;
+                flex: 0 0 33.333%;
             }
-            
             .slider-item:nth-child(1) {
-                background: 
+                background:
                     linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)),
-                    url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761313056/hyundai_moblike_ltffge.png') 
-                    center/contain; 
-            }
-            
-            .slider-item:nth-child(2) {
-                background: 
-                    linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)),
-                    url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761314674/LASGIDI_w02ui3.png') 
+                    url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761313056/hyundai_moblike_ltffge.png')
                     center/contain;
             }
-            
-            .slider-item:nth-child(3) {
-                background: 
+            .slider-item:nth-child(2) {
+                background:
                     linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)),
-                    url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761315280/generate_an_image_of_a_blcak_Mercedes_Benz_GLE_350_2017_r87krj.jpg') 
+                    url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761314674/LASGIDI_w02ui3.png')
+                    center/contain;
+            }
+            .slider-item:nth-child(3) {
+                background:
+                    linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)),
+                    url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761315280/generate_an_image_of_a_blcak_Mercedes_Benz_GLE_350_2017_r87krj.jpg')
                     center/contain;
             }
         }
-
         /* TABLET: 2 CARS VISIBLE */
         @media (min-width: 768px) and (max-width: 991.98px) {
-            .horizontal-slider { 
-                width: 150%; 
-                gap: 1.5rem; 
+            .horizontal-slider {
+                width: 150%;
+                gap: 1.5rem;
             }
-            .slider-item { 
-                height: 65vh !important; 
-                flex: 0 0 50%; 
+            .slider-item {
+                height: 65vh !important;
+                flex: 0 0 50%;
             }
-            
             .slider-item:nth-child(1) {
-                background: 
+                background:
                     linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)),
-                    url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761313056/hyundai_moblike_ltffge.png') 
+                    url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761313056/hyundai_moblike_ltffge.png')
                     center/cover;
             }
-            
             .slider-item:nth-child(2) {
-                background: 
+                background:
                     linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)),
-                    url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761314674/LASGIDI_w02ui3.png') 
+                    url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761314674/LASGIDI_w02ui3.png')
                     center/cover;
             }
-            
             .slider-item:nth-child(3) {
-                background: 
+                background:
                     linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)),
-                    url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761315280/generate_an_image_of_a_blcak_Mercedes_Benz_GLE_350_2017_r87krj.jpg') 
+                    url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761315280/generate_an_image_of_a_blcak_Mercedes_Benz_GLE_350_2017_r87krj.jpg')
                     center/cover;
             }
         }
-
         /* DESKTOP: ALL 3 CARS VISIBLE */
         @media (min-width: 992px) {
-            .horizontal-slider { 
-                width: 100%; 
-                gap: 2rem; 
+            .horizontal-slider {
+                width: 100%;
+                gap: 2rem;
             }
-            .slider-item { 
-                height: 75vh !important; 
-                flex: 0 0 calc(33.333% - 1.33rem); 
+            .slider-item {
+                height: 75vh !important;
+                flex: 0 0 calc(33.333% - 1.33rem);
             }
-            
             .slider-item:nth-child(1) {
-                background: 
+                background:
                     linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)),
-                    url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761313056/hyundai_moblike_ltffge.png') 
+                    url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761313056/hyundai_moblike_ltffge.png')
                     center/cover;
             }
-            
             .slider-item:nth-child(2) {
-                background: 
+                background:
                     linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)),
-                    url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761314674/LASGIDI_w02ui3.png') 
+                    url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761314674/LASGIDI_w02ui3.png')
                     center/cover;
             }
-            
             .slider-item:nth-child(3) {
-                background: 
+                background:
                     linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)),
-                    url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761315280/generate_an_image_of_a_blcak_Mercedes_Benz_GLE_350_2017_r87krj.jpg') 
+                    url('https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761315280/generate_an_image_of_a_blcak_Mercedes_Benz_GLE_350_2017_r87krj.jpg')
                     center/cover;
             }
         }
-
         /* MINIMAL COLLAPSIBLE CARDS */
         .minimal-card {
             position: absolute;
@@ -331,12 +299,10 @@
             width: auto;
             min-height: 45px;
         }
-
         .minimal-card.expanded {
             padding: 1.5rem 2rem !important;
             min-height: 180px;
         }
-
         .car-name {
             font-family: 'Orbitron', monospace !important;
             font-weight: 900 !important;
@@ -346,11 +312,9 @@
             color: #fff !important;
             font-size: clamp(1rem, 3vw, 1.25rem);
         }
-
         .minimal-card.expanded .car-name {
             font-size: clamp(1.5rem, 4vw, 2rem) !important;
         }
-
         .view-more {
             background: rgba(255,255,255,0.15);
             color: #fff !important;
@@ -364,40 +328,33 @@
             display: inline-block;
             margin-top: 0.25rem;
         }
-
         .view-more:hover {
             background: rgba(255,255,255,0.25);
             transform: scale(1.05);
         }
-
         .full-info {
             display: none;
             margin-top: 1rem;
         }
-
         .minimal-card.expanded .full-info {
             display: block;
         }
-
         .full-info .subtitle {
             font-size: clamp(1rem, 2.5vw, 1.25rem) !important;
             font-weight: 700;
             color: #ffd700 !important;
             margin-bottom: 0.5rem;
         }
-
         .full-info .specs {
             font-size: clamp(0.8rem, 2vw, 0.95rem) !important;
             opacity: 0.95;
             margin-bottom: 1rem;
         }
-
         .full-info .actions {
             display: flex;
             gap: 0.5rem;
             justify-content: center;
         }
-
         .full-info .btn-tesla {
             flex: 1;
             min-width: 100px;
@@ -406,11 +363,9 @@
             border-radius: 6px;
             width: auto !important;
         }
-
         .slider-item:hover .minimal-card {
             transform: translateX(-50%) scale(1.05);
         }
-
         /* Info Section */
         .info-section {
             padding: 5rem 1rem; text-align: center;
@@ -428,7 +383,6 @@
         .info-card p {
             font-size: 0.875rem; color: #5c5e62; line-height: 1.6;
         }
-
         /* Stats Section */
         .stats-section {
             padding: 5rem 1rem; background: #000; color: #fff;
@@ -445,7 +399,6 @@
             font-size: 0.875rem; opacity: 0.7; text-transform: uppercase;
             letter-spacing: 0.05em;
         }
-
         /* Comparison Section */
         .comparison-section {
             padding: 5rem 1rem; background: #fff; text-align: center;
@@ -466,32 +419,26 @@
             font-size: 0.875rem;
         }
         .comparison-table .check { color: #047857; font-size: 1.2rem; }
-
         /* Testimonials */
         .testimonials-section {
             padding: 5rem 1rem; background: #f4f4f4; text-align: center;
         }
-
         /* FROM OUR CEO section */
         .ceo-section {
             padding: 4rem 1rem; background: linear-gradient(180deg, #ffffff 0%, #fbfbfc 100%);
             text-align: center; color: #171a20;
         }
-
         .ceo-section .ceo-title {
             font-size: clamp(1.25rem, 2.6vw, 1.75rem); font-weight: 800; letter-spacing: 0.08em;
             text-transform: uppercase; margin-bottom: 1rem;
         }
-
         .ceo-section .ceo-copy {
             max-width: 900px; margin: 0.5rem auto 1.25rem; color: #374151; font-size: 1rem; line-height: 1.7;
         }
-
         .ceo-section .ceo-note {
             display: block; margin-top: 1rem; color: #6b7280; font-size: 0.9rem; font-style: italic;
             font-family: 'Inter', sans-serif;
         }
-
         .ceo-section .ceo-name {
             display: block; margin-top: 0.35rem; font-weight: 800; color: #0f172a;
             font-family: 'Orbitron', monospace; font-size: 1.1rem; letter-spacing: 0.02em;
@@ -513,7 +460,55 @@
         .testimonial strong {
             font-size: 0.875rem; color: #171a20;
         }
-
+        /* Modal */
+        .modal-content {
+            border-radius: 12px;
+            border: none;
+            background: #fff;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+        }
+        .modal-header {
+            border-bottom: none;
+            padding: 1.5rem;
+        }
+        .modal-title {
+            font-family: 'Orbitron', monospace;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            color: #171a20;
+        }
+        .modal-body {
+            padding: 1.5rem;
+        }
+        .modal-footer {
+            border-top: none;
+            padding: 1.5rem;
+        }
+        .form-label {
+            font-weight: 500;
+            color: #171a20;
+            font-size: 0.875rem;
+        }
+        .form-control, .form-select {
+            border: 1px solid #e8e8e8;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            padding: 0.75rem;
+            transition: border-color 0.3s ease;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: #171a20;
+            box-shadow: 0 0 0 0.2rem rgba(23, 26, 32, 0.2);
+        }
+        .form-error {
+            display: none;
+            text-align: center;
+            padding: 1rem;
+            background: #f8d7da;
+            color: #721c24;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
         /* Footer */
         footer {
             background: #171a20; color: #fff; padding: 3rem 1rem 2rem;
@@ -542,13 +537,11 @@
             font-size: 0.813rem; color: rgba(255,255,255,0.5);
             margin-top: 2rem;
         }
-
         /* Animations */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         @media (min-width: 768px) {
             .hero-actions { flex-direction: row; }
             .btn-tesla { width: auto; padding: 0.75rem 4rem; }
@@ -570,41 +563,69 @@
                         <li class="nav-item"><a class="nav-link" href="#performance">Performance</a></li>
                         <li class="nav-item"><a class="nav-link" href="#luxury">Luxury</a></li>
                         <li class="nav-item"><a class="nav-link" href="#reliability">Reliability</a></li>
-                       <!-- <li class="nav-item"><a class="nav-link nav-cta" href="#contact"></a></li> -->
+                        <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
-
     <!-- OPTIMIZED HERO SLIDESHOW - MOBILE 90VH -->
     <section class="hero-section" id="hero">
         <div class="hero-slideshow">
             <div class="hero-slide active"></div>
             <div class="hero-slide"></div>
         </div>
-        
         <!-- Slideshow Dots -->
         <div class="slideshow-dots">
             <span class="dot active" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
         </div>
-
         <div class="hero-content">
             <h1>Redefining Motion in Africa</h1>
             <p>Premium Gasoline Performance for Nigeria's Roads</p>
         </div>
         <div class="hero-actions">
             <a href="#models" class="btn-tesla btn-primary-custom">Explore Models</a>
-            <a href="#contact" class="btn-tesla btn-secondary-custom">Book Test Drive</a>
+            <a href="#" class="btn-tesla btn-secondary-custom" data-bs-toggle="modal" data-bs-target="#testDriveModal">Book Test Drive</a>
         </div>
     </section>
-
+    <!-- Test Drive Modal -->
+    <div class="modal fade" id="testDriveModal" tabindex="-1" aria-labelledby="testDriveModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="testDriveModalLabel">Book a Test Drive</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-error" id="formError">
+                        <p>Please select a vehicle and enter your location.</p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="vehicleSelect" class="form-label">Select Vehicle</label>
+                        <select class="form-select" id="vehicleSelect" required>
+                            <option value="" disabled selected>Select a vehicle</option>
+                            <option value="Hyundai Santa FE 2014">Hyundai Santa FE 2014</option>
+                            <option value="Mercedes ML 350 2014">Mercedes ML 350 2014</option>
+                            <option value="Mercedes GLE 350 2017">Mercedes GLE 350 2017</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="locationInput" class="form-label">Your Location</label>
+                        <input type="text" class="form-control" id="locationInput" placeholder="e.g., Victoria Island, Lagos" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-tesla btn-secondary-custom" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn-tesla btn-primary-custom" onclick="submitTestDrive()">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- ✅ NEW 3-CAR MINIMAL SLIDER (REPLACES CAROUSEL + LEXUS) -->
     <section class="model-slider-section" id="models">
         <div class="container">
             <h2 class="slider-title">Premium Collection</h2>
-            
             <div class="slider-container">
                 <div class="horizontal-slider" id="carSlider">
                     <!-- CAR 1: LAND CRUISER -->
@@ -612,7 +633,6 @@
                         <div class="minimal-card" onclick="toggleCard(this)">
                             <h3 class="car-name">Hyundai Santa FE 2014</h3>
                             <button class="view-more">VIEW MORE</button>
-                            
                             <div class="full-info">
                                 <p class="subtitle">₦18,500,000</p>
                                 <p class="specs">3.3L V6 • 290 HP • 0-100km/h in 7.6s</p>
@@ -623,13 +643,11 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- CAR 2: MERCEDES GLE -->
                     <div class="slider-item">
                         <div class="minimal-card" onclick="toggleCard(this)">
                             <h3 class="car-name">Mercedes ML 350 2014</h3>
                             <button class="view-more">VIEW MORE</button>
-                            
                             <div class="full-info">
                                 <p class="subtitle">₦22,500,000</p>
                                 <p class="specs">3.5L V6 • 302 HP • 0-100km/h in 7.9s</p>
@@ -640,13 +658,11 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- CAR 3: LEXUS LX -->
                     <div class="slider-item">
                         <div class="minimal-card" onclick="toggleCard(this)">
-                            <h3 class="car-name">Mercedes  GLE 350 2017</h3>
+                            <h3 class="car-name">Mercedes GLE 350 2017</h3>
                             <button class="view-more">VIEW MORE</button>
-                            
                             <div class="full-info">
                                 <p class="subtitle">₦30,000,000</p>
                                 <p class="specs">3.5L V6 • 302 HP • 0-100km/h in 7.5s</p>
@@ -659,12 +675,11 @@
                     </div>
                 </div>
                 <div class="text-center mt-4">
-                    <a href="#all-products" id="viewAllProductsBtn" class="btn-tesla btn-primary-custom">View All Our Products</a>
+                    <a href="/Products.html" id="viewAllProductsBtn" class="btn-tesla btn-primary-custom">View All Our Products</a>
                 </div>
             </div>
         </div>
     </section>
-    
     <!-- Performance Info Section -->
     <section class="info-section" id="performance">
         <div class="container">
@@ -694,7 +709,6 @@
             </div>
         </div>
     </section>
-
     <!-- Stats Section -->
     <section class="stats-section">
         <div class="container">
@@ -726,7 +740,6 @@
             </div>
         </div>
     </section>
-
     <!-- Comparison Section -->
     <section class="comparison-section">
         <div class="container">
@@ -766,19 +779,16 @@
             </div>
         </div>
     </section>
-
-<hr
+    <hr>
     <!-- FROM OUR CEO section -->
     <section class="ceo-section" id="from-ceo">
         <div class="container">
             <h2 class="ceo-title">FROM OUR CEO</h2>
             <p class="ceo-copy">Lasgidi Automobile has built its reputation on reliability and integrity. For years we've been relentlessly serving good, well-maintained vehicles to customers across the nation, ensuring dependable performance on every road. Our commitment to quality, aftercare and transparency means customers trust Lasgidi for purchases large and small. We are duly registered with the Corporate Affairs Commission of Nigeria, and operate with full compliance to national regulations and standards.</p>
-
             <span class="ceo-note">from the desk of our ceo</span>
             <span class="ceo-name">Eze Diamond</span>
         </div>
     </section>
-
     <!-- Testimonials -->
     <section class="testimonials-section">
         <div class="container">
@@ -808,7 +818,6 @@
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
@@ -858,53 +867,50 @@
             </div>
         </div>
     </footer>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
         // Hero Slideshow Functionality
         let slideIndex = 1;
         const slides = document.querySelectorAll('.hero-slide');
         const dots = document.querySelectorAll('.dot');
-
         function showSlide(n) {
             slides.forEach(slide => slide.classList.remove('active'));
             dots.forEach(dot => dot.classList.remove('active'));
-            
             if (n > slides.length) slideIndex = 1;
             if (n < 1) slideIndex = slides.length;
-            
             slides[slideIndex - 1].classList.add('active');
             dots[slideIndex - 1].classList.add('active');
         }
-
         function nextSlide() {
             slideIndex++;
             showSlide(slideIndex);
         }
-
         function currentSlide(n) {
             slideIndex = n;
             showSlide(slideIndex);
         }
-
         // Auto slideshow every 10 seconds
         setInterval(nextSlide, 10000);
-
         // ✅ NEW 3-CAR SLIDER FUNCTIONALITY
         let currentCarSlide = 0;
         const carSlider = document.getElementById('carSlider');
         const totalCarSlides = 3;
         let autoSlideInterval;
-
         function nextCarSlide() {
             currentCarSlide = (currentCarSlide + 1) % totalCarSlides;
             const translateX = -(currentCarSlide * 33.333);
             carSlider.style.transform = `translateX(${translateX}%)`;
         }
+        // Function to check if we're on mobile
+        function isMobileView() {
+            return window.innerWidth < 768;
+        }
 
         function startAutoSlide() {
             stopAutoSlide(); // Clear any existing interval
-            autoSlideInterval = setInterval(nextCarSlide, 4000);
+            if (isMobileView()) { // Only start auto-slide on mobile
+                autoSlideInterval = setInterval(nextCarSlide, 4000);
+            }
         }
 
         function stopAutoSlide() {
@@ -914,15 +920,24 @@
             }
         }
 
-        // Start auto-sliding initially
-        startAutoSlide();
+        // Start auto-sliding only if on mobile
+        if (isMobileView()) {
+            startAutoSlide();
+        }
 
+        // Update auto-slide behavior when window is resized
+        window.addEventListener('resize', () => {
+            if (isMobileView()) {
+                startAutoSlide();
+            } else {
+                stopAutoSlide();
+            }
+        });
         // MOBILE TOUCH/SWIPE SUPPORT
         let startX = 0, currentX = 0;
         carSlider.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
         });
-
         carSlider.addEventListener('touchend', (e) => {
             currentX = e.changedTouches[0].clientX;
             const diff = startX - currentX;
@@ -931,27 +946,22 @@
                 else currentCarSlide = (currentCarSlide - 1 + totalCarSlides) % totalCarSlides;
             }
         });
-
         // DESKTOP MOUSE DRAG SUPPORT
         let isDown = false;
         let startPos = 0;
-
         carSlider.addEventListener('mousedown', (e) => {
             isDown = true;
             startPos = e.clientX;
             carSlider.style.cursor = 'grabbing';
         });
-
         carSlider.addEventListener('mouseleave', () => {
             isDown = false;
             carSlider.style.cursor = 'grab';
         });
-
         carSlider.addEventListener('mouseup', () => {
             isDown = false;
             carSlider.style.cursor = 'grab';
         });
-
         carSlider.addEventListener('mousemove', (e) => {
             if (!isDown) return;
             e.preventDefault();
@@ -962,19 +972,36 @@
                 isDown = false;
             }
         });
-
         // ✅ TOGGLE CARD FUNCTION
         function toggleCard(card) {
             const isExpanding = !card.classList.contains('expanded');
             card.classList.toggle('expanded');
-            
             if (isExpanding) {
                 stopAutoSlide();
             } else {
                 startAutoSlide();
             }
         }
-
+        // Test Drive Modal Functionality
+        const testDriveModal = new bootstrap.Modal(document.getElementById('testDriveModal'));
+        function submitTestDrive() {
+            const vehicleSelect = document.getElementById('vehicleSelect').value;
+            const locationInput = document.getElementById('locationInput').value;
+            const formError = document.getElementById('formError');
+            if (!vehicleSelect || !locationInput) {
+                formError.style.display = 'block';
+                setTimeout(() => {
+                    formError.style.display = 'none';
+                }, 3000);
+                return;
+            }
+            const message = `Hello, I want to book a test drive for ${vehicleSelect} at ${locationInput}.`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappNumber = '+2348101751349'; // Replace with actual WhatsApp number
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+            testDriveModal.hide();
+        }
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -989,7 +1016,6 @@
                 }
             });
         });
-
         // Navbar transparency on scroll
         const nav = document.querySelector('nav');
         window.addEventListener('scroll', () => {
@@ -999,13 +1025,11 @@
                 nav.classList.add('transparent');
             }
         });
-
         // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
         };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1014,7 +1038,6 @@
                 }
             });
         }, observerOptions);
-
         document.querySelectorAll('.info-card, .stat-item, .testimonial').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';

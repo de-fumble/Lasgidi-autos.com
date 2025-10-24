@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - Lasgidi Autos</title>
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761317867/Emblem_Logo_for_Lasgidi_Automobile.ng_with_Chrome_Highlights_1_kerqar.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #fff;
+            color: #171a20;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Navigation - Tesla Style */
+        nav {
+            position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(10px); padding: 0.7rem 0; z-index: 1000;
+            transition: all 0.3s ease; border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        nav.transparent { background: transparent; border-bottom: none; }
+        nav.transparent .navbar-nav .nav-link { color: #fff !important; }
+        nav.transparent .logo { color: #fff !important; }
+        .logo {
+            font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em;
+            color: #171a20; text-decoration: none;
+        }
+        .navbar-nav .nav-link {
+            color: #171a20 !important; font-weight: 500;
+            font-size: 0.875rem; transition: all 0.2s ease; padding: 0.5rem 1rem !important;
+            border-radius: 4px; margin: 0 0.25rem;
+        }
+        .navbar-nav .nav-link:hover { background: rgba(0,0,0,0.05); }
+        nav.transparent .navbar-nav .nav-link:hover { background: rgba(255,255,255,0.1); }
+        .nav-cta {
+            background: #171a20 !important; color: #fff !important;
+            padding: 0.5rem 1.5rem !important; border-radius: 4px; font-weight: 500;
+        }
+        nav.transparent .nav-cta { background: rgba(255,255,255,0.15) !important; }
+        .navbar-toggler {
+            border: none; padding: 0.25rem 0.5rem;
+        }
+        .navbar-toggler:focus { box-shadow: none; }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000000' d='M19.14 12.936c.036-.306.036-.612 0-.918l2.037-1.58a.5.5 0 0 0 .12-.617l-1.928-3.338a.5.5 0 0 0-.588-.22l-2.396.96a7.007 7.007 0 0 0-1.583-.918l-.36-2.54A.5.5 0 0 0 13.7 2h-3.4a.5.5 0 0 0-.495.424l-.36 2.54a7.007 7.007 0 0 0-1.583.918l-2.396-.96a.5.5 0 0 0-.588.22L2.3 8.82a.5.5 0 0 0 .12.617l2.037 1.58c-.036.306-.036.612 0 .918L2.42 14.47a.5.5 0 0 0-.12.617l1.928 3.338a.5.5 0 0 0 .588.22l2.396-.96c.49.38 1.02.693 1.583.918l.36 2.54A.5.5 0 0 0 10.3 22h3.4a.5.5 0 0 0 .495-.424l-.36-2.54c.563-.225 1.093-.538 1.583-.918l2.396.96a.5.5 0 0 0 .588-.22l1.928-3.338a.5.5 0 0 0-.12-.617l-2.037-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z'/%3E%3C/svg%3E");
+        }
+        nav.transparent .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M19.14 12.936c.036-.306.036-.612 0-.918l2.037-1.58a.5.5 0 0 0 .12-.617l-1.928-3.338a.5.5 0 0 0-.588-.22l-2.396.96a7.007 7.007 0 0 0-1.583-.918l-.36-2.54A.5.5 0 0 0 13.7 2h-3.4a.5.5 0 0 0-.495.424l-.36 2.54a7.007 7.007 0 0 0-1.583.918l-2.396-.96a.5.5 0 0 0-.588.22L2.3 8.82a.5.5 0 0 0 .12.617l2.037 1.58c-.036.306-.036.612 0 .918L2.42 14.47a.5.5 0 0 0-.12.617l1.928 3.338a.5.5 0 0 0 .588.22l2.396-.96c.49.38 1.02.693 1.583.918l.36 2.54A.5.5 0 0 0 10.3 22h3.4a.5.5 0 0 0 .495-.424l-.36-2.54c.563-.225 1.093-.538 1.583-.918l2.396.96a.5.5 0 0 0 .588-.22l1.928-3.338a.5.5 0 0 0-.12-.617l-2.037-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z'/%3E%3C/svg%3E");
+        }
+        /* Hero Section for All Products */
+        .hero-section {
+            height: 60vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+            overflow: hidden;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)),
+                url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85&fm=webp') center/cover;
+        }
+        .hero-content h1 {
+            font-size: clamp(2rem, 5vw, 2.5rem); font-weight: 600; letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+        .hero-content p {
+            font-size: clamp(0.875rem, 2vw, 1rem); font-weight: 400; opacity: 0.95;
+        }
+        /* Filter Section */
+        .filter-section {
+            padding: 3rem 1rem;
+            background: #f8f9fa;
+        }
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 600;
+            margin-bottom: 3rem;
+            letter-spacing: -0.02em;
+        }
+        .form-select {
+            background: #fff;
+            border: 1px solid #e8e8e8;
+            color: #171a20;
+        }
+        /* Products Grid */
+        .products-section {
+            padding: 3rem 1rem;
+            background: #fff;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+        .product-image {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .product-info {
+            padding: 1.5rem;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .car-name {
+            font-family: 'Orbitron', monospace;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            color: #171a20;
+            font-size: clamp(1rem, 3vw, 1.25rem);
+        }
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            font-weight: 700;
+            color: #171a20;
+            margin-bottom: 0.5rem;
+        }
+        .specs {
+            font-size: clamp(0.8rem, 2vw, 0.95rem);
+            color: #5c5e62;
+            margin-bottom: 1rem;
+        }
+        .btn-tesla {
+            padding: 0.75rem 2rem; font-size: 0.875rem; font-weight: 500;
+            border: none; border-radius: 4px; cursor: pointer;
+            transition: all 0.3s ease; text-decoration: none;
+            display: inline-block; letter-spacing: 0.02em; width: 100%;
+        }
+        .btn-primary-custom { background: #171a20; color: #fff; }
+        .btn-primary-custom:hover { background: #000; color: #fff; }
+        .btn-secondary-custom { background: #f4f4f4; color: #171a20; }
+        .btn-secondary-custom:hover { background: #e8e8e8; color: #171a20; }
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: #5c5e62;
+            display: none;
+        }
+        /* Modal */
+        .modal-content {
+            border-radius: 12px;
+            border: none;
+            background: #fff;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+        }
+        .modal-header {
+            border-bottom: none;
+            padding: 1.5rem;
+        }
+        .modal-title {
+            font-family: 'Orbitron', monospace;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            color: #171a20;
+        }
+        .modal-body {
+            padding: 1.5rem;
+        }
+        .modal-footer {
+            border-top: none;
+            padding: 1.5rem;
+        }
+        .form-label {
+            font-weight: 500;
+            color: #171a20;
+            font-size: 0.875rem;
+        }
+        .form-control, .form-select {
+            border: 1px solid #e8e8e8;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            padding: 0.75rem;
+            transition: border-color 0.3s ease;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: #171a20;
+            box-shadow: 0 0 0 0.2rem rgba(23, 26, 32, 0.2);
+        }
+        .form-error {
+            display: none;
+            text-align: center;
+            padding: 1rem;
+            background: #f8d7da;
+            color: #721c24;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        /* Footer */
+        footer {
+            background: #171a20; color: #fff; padding: 3rem 1rem 2rem;
+        }
+        .footer-section h3 {
+            font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        .footer-section p, .footer-section a {
+            font-size: 0.813rem; color: rgba(255,255,255,0.6);
+            text-decoration: none; line-height: 1.8; display: block;
+        }
+        .footer-section a:hover { color: #fff; }
+        .social-links { display: flex; gap: 1rem; }
+        .social-links a {
+            display: inline-block;
+        }
+        .social-links i {
+            font-size: 1.25rem; color: rgba(255,255,255,0.6);
+            transition: color 0.3s;
+        }
+        .social-links i:hover { color: #fff; }
+        .copyright {
+            text-align: center; padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.813rem; color: rgba(255,255,255,0.5);
+            margin-top: 2rem;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="navbar navbar-expand-lg navbar-light p-0">
+                <a href="/" class="logo navbar-brand mb-0"><img src="https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761317867/Emblem_Logo_for_Lasgidi_Automobile.ng_with_Chrome_Highlights_1_kerqar.png" alt="Lasgidi Autos" style="height: 50px; width: auto; border-radius: 50px;"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#performance">Performance</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#luxury">Luxury</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#reliability">Reliability</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-content">
+            <h1>All Premium Vehicles</h1>
+            <p>Explore our full collection of luxury vehicles engineered for Nigerian roads.</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h4 class="mb-0"><i class="fas fa-filter me-2"></i>Filter & Sort</h4>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-end">
+                        <select class="form-select me-2" id="sortSelect" style="width: auto;">
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="year-desc">Newest First</option>
+                            <option value="horsepower-desc">Most Powerful</option>
+                        </select>
+                        <select class="form-select" id="brandFilter" style="width: auto;">
+                            <option value="">All Brands</option>
+                            <option value="Mercedes">Mercedes</option>
+                            <option value="Hyundai">Hyundai</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="BMW">BMW</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <!-- Loading -->
+            <div class="loading" id="loading">
+                <i class="fas fa-spinner fa-spin fa-2x"></i>
+                <p class="mt-2">Loading premium vehicles...</p>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="row g-4" id="productsContainer">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+
+            <!-- No Results -->
+            <div class="no-results" id="noResults">
+                <i class="fas fa-search fa-3x mb-3"></i>
+                <h4>No vehicles found</h4>
+                <p>Try adjusting your filters to see more premium vehicles.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Order Modal -->
+    <div class="modal fade" id="customOrderModal" tabindex="-1" aria-labelledby="customOrderModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="customOrderModalLabel">Custom Order</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-error" id="customOrderFormError" style="display: none;">
+                        <p>Please fill in all required fields.</p>
+                    </div>
+                    <p id="customOrderVehicleName" class="mb-2"><strong>Vehicle:</strong> </p>
+                    <p id="customOrderVehiclePrice" class="mb-2"><strong>Price:</strong> </p>
+                    <p id="customOrderVehicleSpecs" class="mb-4"><strong>Specs:</strong> </p>
+                    <div class="mb-3">
+                        <label for="budgetRange" class="form-label">Budget Range</label>
+                        <input type="text" class="form-control" id="budgetRange" placeholder="e.g., ₦20,000,000 - ₦30,000,000" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="transmissionType" class="form-label">Transmission Type</label>
+                        <select class="form-select" id="transmissionType" required>
+                            <option value="" disabled selected>Select transmission</option>
+                            <option value="Automatic">Automatic</option>
+                            <option value="Manual">Manual</option>
+                            <option value="Any">Any</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="extraNotes" class="form-label">Extra Notes</label>
+                        <textarea class="form-control" id="extraNotes" rows="3" placeholder="Any additional preferences or notes"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-tesla btn-secondary-custom" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn-tesla btn-primary-custom" onclick="submitCustomOrder()">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schedule Test Drive Modal -->
+    <div class="modal fade" id="testDriveModal" tabindex="-1" aria-labelledby="testDriveModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="testDriveModalLabel">Schedule Test Drive</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-error" id="testDriveFormError" style="display: none;">
+                        <p>Please enter your location.</p>
+                    </div>
+                    <p id="testDriveVehicleName" class="mb-2"><strong>Vehicle:</strong> </p>
+                    <p id="testDriveVehiclePrice" class="mb-2"><strong>Price:</strong> </p>
+                    <p id="testDriveVehicleSpecs" class="mb-4"><strong>Specs:</strong> </p>
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Your Location</label>
+                        <input type="text" class="form-control" id="location" placeholder="e.g., Victoria Island, Lagos" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-tesla btn-secondary-custom" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn-tesla btn-primary-custom" onclick="submitTestDrive()">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="footer-section">
+                        <h3>Lasgidi Autos</h3>
+                        <p>Premium Gasoline Performance</p>
+                        <p>Victoria Island, Lagos</p>
+                        <p>+234 1 234 5678</p>
+                        <p><a href="mailto:info@lasgidiautos.ng">info@lasgidiautos.ng</a></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="footer-section">
+                        <h3>Showrooms</h3>
+                        <p><a href="#">Victoria Island</a></p>
+                        <p><a href="#">Lekki</a></p>
+                        <p><a href="#">Ikeja</a></p>
+                        <p><a href="#">Abuja</a></p>
+                        <p><a href="#">Port Harcourt</a></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="footer-section">
+                        <h3>Services</h3>
+                        <p><a href="#">Custom Orders</a></p>
+                        <p><a href="#">Financing</a></p>
+                        <p><a href="#">Trade-In</a></p>
+                        <p><a href="#">Service Center</a></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="footer-section">
+                        <h3>Connect</h3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Lasgidi Autos.ng. Premium Gasoline Vehicles for Nigeria.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Vehicle data based on source code and extended
+        const vehicles = [
+            {
+                id: 1,
+                name: "Hyundai Santa FE 2014",
+                price: 18500000,
+                year: 2014,
+                engine: "3.3L V6",
+                horsepower: 290,
+                acceleration: "7.6s",
+                brand: "Hyundai",
+                image: "https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761313056/hyundai_moblike_ltffge.png"
+            },
+            {
+                id: 2,
+                name: "Mercedes ML 350 2014",
+                price: 22500000,
+                year: 2014,
+                engine: "3.5L V6",
+                horsepower: 302,
+                acceleration: "7.9s",
+                brand: "Mercedes",
+                image: "https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761314674/LASGIDI_w02ui3.png"
+            },
+            {
+                id: 3,
+                name: "Mercedes GLE 350 2017",
+                price: 30000000,
+                year: 2017,
+                engine: "3.5L V6",
+                horsepower: 302,
+                acceleration: "7.5s",
+                brand: "Mercedes",
+                image: "https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761315280/generate_an_image_of_a_blcak_Mercedes_Benz_GLE_350_2017_r87krj.jpg"
+            },
+            {
+                id: 4,
+                name: "Toyota Land Cruiser 2018",
+                price: 45000000,
+                year: 2018,
+                engine: "4.6L V8",
+                horsepower: 381,
+                acceleration: "7.2s",
+                brand: "Toyota",
+                image: "https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761343523/generate_a_Toyota_Land_Cruiser_2018_qpk1wi.jpg"
+            },
+            {
+                id: 5,
+                name: "BMW X5 xDrive40i 2019",
+                price: 38000000,
+                year: 2019,
+                engine: "3.0L Turbo I6",
+                horsepower: 335,
+                acceleration: "6.2s",
+                brand: "BMW",
+                image: "https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761343448/generate_a_BMW_X5_xDrive40i_2019_cyhuov.jpg"
+            },
+            {
+                id: 6,
+                name: "FORD FUSION 2017",
+                price: 21000000,
+                year: 2017,
+                engine: "2.7L Twin Turbo V6",
+                horsepower: 325,
+                acceleration: "5.3s",
+                brand: "FORD",
+                image: "https://res.cloudinary.com/dmhy8rk7q/image/upload/v1761345862/generate_a_ford_fusion_2017_oy7vgk.jpg"
+            }
+        ];
+
+        let filteredVehicles = [...vehicles];
+        let selectedVehicle = null;
+
+        // DOM elements
+        const productsContainer = document.getElementById('productsContainer');
+        const loading = document.getElementById('loading');
+        const noResults = document.getElementById('noResults');
+        const sortSelect = document.getElementById('sortSelect');
+        const brandFilter = document.getElementById('brandFilter');
+        const customOrderModal = new bootstrap.Modal(document.getElementById('customOrderModal'), { keyboard: false });
+        const testDriveModal = new bootstrap.Modal(document.getElementById('testDriveModal'), { keyboard: false });
+        const customOrderVehicleNameDisplay = document.getElementById('customOrderVehicleName');
+        const customOrderVehiclePriceDisplay = document.getElementById('customOrderVehiclePrice');
+        const customOrderVehicleSpecsDisplay = document.getElementById('customOrderVehicleSpecs');
+        const budgetRange = document.getElementById('budgetRange');
+        const transmissionType = document.getElementById('transmissionType');
+        const extraNotes = document.getElementById('extraNotes');
+        const customOrderFormError = document.getElementById('customOrderFormError');
+        const testDriveVehicleNameDisplay = document.getElementById('testDriveVehicleName');
+        const testDriveVehiclePriceDisplay = document.getElementById('testDriveVehiclePrice');
+        const testDriveVehicleSpecsDisplay = document.getElementById('testDriveVehicleSpecs');
+        const locationInput = document.getElementById('location');
+        const testDriveFormError = document.getElementById('testDriveFormError');
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM fully loaded');
+            try {
+                loadVehicles();
+                sortSelect.addEventListener('change', filterAndSortVehicles);
+                brandFilter.addEventListener('change', filterAndSortVehicles);
+            } catch (error) {
+                console.error('Initialization error:', error);
+            }
+        });
+
+        function loadVehicles() {
+            console.log('Loading vehicles...');
+            try {
+                showLoading();
+                setTimeout(() => {
+                    filterAndSortVehicles();
+                    hideLoading();
+                }, 3000);
+            } catch (error) {
+                console.error('Error in loadVehicles:', error);
+            }
+        }
+
+        function filterAndSortVehicles() {
+            console.log('Filtering and sorting vehicles...');
+            try {
+                const selectedBrand = brandFilter.value;
+                const selectedSort = sortSelect.value;
+
+                filteredVehicles = vehicles.filter(vehicle => !selectedBrand || vehicle.brand === selectedBrand);
+
+                filteredVehicles.sort((a, b) => {
+                    switch (selectedSort) {
+                        case 'price-asc': return a.price - b.price;
+                        case 'price-desc': return b.price - a.price;
+                        case 'year-desc': return b.year - a.year;
+                        case 'horsepower-desc': return b.horsepower - a.horsepower;
+                        default: return a.price - b.price;
+                    }
+                });
+
+                renderVehicles();
+            } catch (error) {
+                console.error('Error in filterAndSortVehicles:', error);
+            }
+        }
+
+        function renderVehicles() {
+            console.log('Rendering vehicles...');
+            try {
+                productsContainer.innerHTML = '';
+                if (filteredVehicles.length === 0) {
+                    noResults.style.display = 'block';
+                    return;
+                }
+                noResults.style.display = 'none';
+
+                filteredVehicles.forEach(vehicle => {
+                    const card = document.createElement('div');
+                    card.className = 'col-md-6 col-lg-4';
+                    const priceNGN = vehicle.price.toLocaleString();
+                    card.innerHTML = `
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: url('${vehicle.image}');"></div>
+                            <div class="product-info">
+                                <h3 class="car-name">${vehicle.name}</h3>
+                                <p class="subtitle">₦${priceNGN}</p>
+                                <p class="specs">${vehicle.engine} • ${vehicle.horsepower} HP • 0-100km/h in ${vehicle.acceleration}</p>
+                                <button class="btn-tesla btn-primary-custom mb-2" onclick='openCustomOrderModal(${JSON.stringify(vehicle)})'>Custom Order</button>
+                                <button class="btn-tesla btn-secondary-custom" onclick='openTestDriveModal(${JSON.stringify(vehicle)})'>Schedule Test Drive</button>
+                            </div>
+                        </div>
+                    `;
+                    productsContainer.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Error in renderVehicles:', error);
+            }
+        }
+
+        function openCustomOrderModal(vehicle) {
+            console.log('Opening custom order modal for:', vehicle.name);
+            try {
+                selectedVehicle = vehicle;
+                const priceNGN = vehicle.price.toLocaleString();
+                customOrderVehicleNameDisplay.innerHTML = `<strong>Vehicle:</strong> ${vehicle.name}`;
+                customOrderVehiclePriceDisplay.innerHTML = `<strong>Price:</strong> ₦${priceNGN}`;
+                customOrderVehicleSpecsDisplay.innerHTML = `<strong>Specs:</strong> ${vehicle.engine} • ${vehicle.horsepower} HP • 0-100km/h in ${vehicle.acceleration}`;
+                budgetRange.value = '';
+                transmissionType.value = '';
+                extraNotes.value = '';
+                customOrderFormError.style.display = 'none';
+                customOrderModal.show();
+            } catch (error) {
+                console.error('Error in openCustomOrderModal:', error);
+            }
+        }
+
+        function submitCustomOrder() {
+            console.log('Submitting custom order...');
+            try {
+                const budget = budgetRange.value.trim();
+                const transmission = transmissionType.value;
+                const notes = extraNotes.value.trim();
+
+                if (!budget || !transmission) {
+                    customOrderFormError.style.display = 'block';
+                    setTimeout(() => {
+                        customOrderFormError.style.display = 'none';
+                    }, 3000);
+                    return;
+                }
+
+                const message = `Hello, I want to custom order ${selectedVehicle.name}. Price: ₦${selectedVehicle.price.toLocaleString()}. Specs: ${selectedVehicle.engine} • ${selectedVehicle.horsepower} HP • 0-100km/h in ${selectedVehicle.acceleration}. Budget range: ${budget}. Transmission: ${transmission}. Notes: ${notes || 'None'}.`;
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappNumber = '+2348101751349';
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+                window.open(whatsappUrl, '_blank');
+                customOrderModal.hide();
+            } catch (error) {
+                console.error('Error in submitCustomOrder:', error);
+            }
+        }
+
+        function openTestDriveModal(vehicle) {
+            console.log('Opening test drive modal for:', vehicle.name);
+            try {
+                selectedVehicle = vehicle;
+                const priceNGN = vehicle.price.toLocaleString();
+                testDriveVehicleNameDisplay.innerHTML = `<strong>Vehicle:</strong> ${vehicle.name}`;
+                testDriveVehiclePriceDisplay.innerHTML = `<strong>Price:</strong> ₦${priceNGN}`;
+                testDriveVehicleSpecsDisplay.innerHTML = `<strong>Specs:</strong> ${vehicle.engine} • ${vehicle.horsepower} HP • 0-100km/h in ${vehicle.acceleration}`;
+                locationInput.value = '';
+                testDriveFormError.style.display = 'none';
+                testDriveModal.show();
+            } catch (error) {
+                console.error('Error in openTestDriveModal:', error);
+            }
+        }
+
+        function submitTestDrive() {
+            console.log('Submitting test drive request...');
+            try {
+                const location = locationInput.value.trim();
+
+                if (!location) {
+                    testDriveFormError.style.display = 'block';
+                    setTimeout(() => {
+                        testDriveFormError.style.display = 'none';
+                    }, 3000);
+                    return;
+                }
+
+                const message = `Hello, I want to schedule a test drive for ${selectedVehicle.name}. Price: ₦${selectedVehicle.price.toLocaleString()}. Specs: ${selectedVehicle.engine} • ${selectedVehicle.horsepower} HP • 0-100km/h in ${selectedVehicle.acceleration}. Location: ${location}.`;
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappNumber = '+2348101751349';
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+                window.open(whatsappUrl, '_blank');
+                testDriveModal.hide();
+            } catch (error) {
+                console.error('Error in submitTestDrive:', error);
+            }
+        }
+
+        function showLoading() {
+            console.log('Showing loading...');
+            try {
+                loading.style.display = 'block';
+                productsContainer.style.display = 'none';
+                noResults.style.display = 'none';
+            } catch (error) {
+                console.error('Error in showLoading:', error);
+            }
+        }
+
+        function hideLoading() {
+            console.log('Hiding loading...');
+            try {
+                loading.style.display = 'none';
+                productsContainer.style.display = 'flex';
+            } catch (error) {
+                console.error('Error in hideLoading:', error);
+            }
+        }
+    </script>
+</body>
+</html>
